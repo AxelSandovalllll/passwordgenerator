@@ -27,7 +27,7 @@ public class Driver {
 
         User axel = new User(firstName, lastName, email, number, color, password);
 
-        System.out.println(axel.generatePassword(firstName, color, lastName, number));
+        System.out.println(axel.generatePassword(firstName, lastName, color, number));
 
     }
 

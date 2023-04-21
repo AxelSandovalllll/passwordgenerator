@@ -77,13 +77,15 @@ public class User {
         // 1. get the first letters of the firstName
         String firstLetter = firstName.substring(0, 2);
 
-        // 2. get the middle letters of the lastName
-        String lastLetter = lastName.substring(1, 3).toUpperCase();
+        // 2.get the middle letters of lastname
+
+        String lastLetter = lastName.substring(1, 4).toUpperCase().replace("e", "q");
 
         // 3. get a random number between 0 and 100
         int randomNumber = number;
         int rando = (int) (Math.random() * 100);
-        String colorCode = color.replace("a", "4");
+        String colorCode = color.replace("a", "69").replace("e", "efgej").replace("i", "fork").replace("o", "o00-")
+                .replace("u", "210m");
 
         // 4. concatenate the three values
         String password = colorCode + rando + lastLetter + randomNumber + firstLetter;
