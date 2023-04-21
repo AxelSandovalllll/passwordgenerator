@@ -72,17 +72,21 @@ public class User {
     // The class should have a generatePassword method that generates a password
     // (yet another attribute) that is (relatively) easy for the user to remember,
     // but hard for others to guess based on criteria that you develop
-    public String generatePassword(String firstName, String lastName, int number) {
-        // 1. get the first letter of the firstName
+    public String generatePassword(String firstName, String lastName, String color, int number) {
+
+        // 1. get the first letters of the firstName
         String firstLetter = firstName.substring(0, 2);
-        // 2. get the first letter of the lastName
-        String lastLetter = lastName.substring(3, 6);
+
+        // 2. get the middle letters of the lastName
+        String lastLetter = lastName.substring(1, 3).toUpperCase();
 
         // 3. get a random number between 0 and 100
-        int randomNumber = (int) (Math.random() * 100);
+        int randomNumber = number;
+        int rando = (int) (Math.random() * 100);
+        String colorCode = color.replace("a", "4");
 
         // 4. concatenate the three values
-        String password = firstLetter + lastLetter + randomNumber;
+        String password = colorCode + rando + lastLetter + randomNumber + firstLetter;
         return password;
     }
 
