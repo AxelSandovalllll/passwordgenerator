@@ -74,20 +74,23 @@ public class User {
     // but hard for others to guess based on criteria that you develop
     public String generatePassword(String firstName, String lastName, String color, int number) {
 
-        // 1. get the first letters of the firstName
-        String firstLetter = firstName.substring(0, 2);
+        // 1. get the first letters of the firstName, makes them lowercase
+        String firstLetter = firstName.substring(0, 2).toLowerCase();
 
-        // 2.get the middle letters of lastname
-
+        // 2.get the middle letters of lastname, uppercase, & replace "E" with "Q
         String lastLetter = lastName.substring(1, 4).toUpperCase().replace("e", "q");
 
-        // 3. get a random number between 0 and 100
+        // 3. favorite number goes into password
         int randomNumber = number;
+
+        // 4. random number between 1-100 is generated
         int rando = (int) (Math.random() * 100);
+
+        // 5. favorite color is converted to a code
         String colorCode = color.replace("a", "69").replace("e", "efgej").replace("i", "fork").replace("o", "o00-")
                 .replace("u", "210m");
 
-        // 4. concatenate the three values
+        // 4. concatenate the 5 values in a random order
         String password = colorCode + rando + lastLetter + randomNumber + firstLetter;
         return password;
     }
