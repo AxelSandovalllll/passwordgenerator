@@ -1,17 +1,21 @@
 package edu.guilford;
 
-public class User {
-    // set attributes
+public class User2 {
 
-    public String firstName;
-    public String lastName;
-    public String email;
-    public int number;
-    public String color;
-    public String password;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private int number;
+    private String color;
+    private String password;
 
-    // constructor
-    public User(String firstName, String lastName, String email, int number, String color, String password) {
+    // empty constructor
+    public User2() {
+
+    }
+
+    // full constructor
+    public User2(String firstName, String lastName, String email, int number, String color, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -69,19 +73,19 @@ public class User {
         this.password = password;
     }
 
-    // The class should have a generatePassword method that generates a password
-    // (yet another attribute) that is (relatively) easy for the user to remember,
-    // but hard for others to guess based on criteria that you develop
-    public String generatePassword(String firstName, String lastName, String color, int number) {
+    // generate a random password method based on user's first name, last name,
+    // favorite color, and favorite number
+
+    public void generatePassword(String firstName, String lastName, String color, int number) {
 
         // 1. get the first letters of the firstName, makes them lowercase
         String firstLetter = firstName.substring(0, 2).toLowerCase();
 
-        // 2.get the middle letters of lastname, uppercase, & replace "E" with "Q
+        // 2.get the first letters of lastname, uppercase, & replace "E" with "Q
         String lastLetter = lastName.substring(1, 4).toUpperCase().replace("e", "q");
 
         // 3. favorite number goes into password
-        int randomNumber = number;
+        int favNum = number;
 
         // 4. random number between 1-100 is generated
         int rando = (int) (Math.random() * 100);
@@ -91,8 +95,8 @@ public class User {
                 .replace("u", "210m");
 
         // 4. concatenate the 5 values in a random order
-        String password = colorCode + rando + lastLetter + randomNumber + firstLetter;
-        return password;
+        password = colorCode + rando + lastLetter + favNum + firstLetter;
+
     }
 
 }
