@@ -40,9 +40,11 @@ public class Driver2 {
 
         // decrypt the password using the AES class
         String strToDecrypt = encryptedPassword;
-        String decryptedPassword = aes.decrypt(strToDecrypt, "ThisIsASecretKey");
-        System.out.println("Your decrypted password is: " + decryptedPassword + "\n");
+        String decryptedPassword = aes.decrypt(strToDecrypt, "ThisisASecretKey");
+        System.out.println("Your decrypted password is: " + decryptedPassword +
+                "\n");
 
+        // second user
     }
 
 }
